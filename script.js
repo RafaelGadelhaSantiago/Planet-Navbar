@@ -30,8 +30,8 @@ function navBurgerMenu() {
         /* Add dynamic transparency to nav */
         if (nav.getAttribute("data-isTransparent")) {
           if (
-            document.body.scrollTop >= transparencyOffset ||
-            document.documentElement.scrollTop >= transparencyOffset
+            // document.body.scrollTop >= transparencyOffset || document.documentElement.scrollTop >= transparencyOffset
+            document.scrollingElement.scrollTop >= transparencyOffset || document.documentElement.scrollTop >= transparencyOffset
           ) {
             /*in some Chrome versions there is bug with 'document.body.scrollTop'*/
             nav.setAttribute("data-isTransparent", "false");
