@@ -733,7 +733,8 @@ width: max-content;
 
 .sub-menu li {
   line-height: 20px;
-  margin-bottom: 16px position: relative;
+  margin-bottom: 16px;
+  position: relative;
   text-align: left;
   padding: 5px 0;
 }
