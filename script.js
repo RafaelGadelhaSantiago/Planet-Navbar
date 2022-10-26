@@ -1,5 +1,12 @@
 // #nav
 function navBurgerMenu() {
+  const navCheck = document.querySelector(".navbar") !== null;
+  if (navCheck) {
+    const offCanvas = document.querySelector("[data-toggle='offcanvas']");
+    const collapse = document.querySelector(".navbar-collapse");
+    const overlay = document.querySelector(".overlay");
+    const navbar = document.querySelector(".navbar-nav");
+    const submenus = navbar.querySelectorAll(".sub-menu");
 
   const navCheck = document.querySelector(".navbar") !== null;
   if (navCheck) {
