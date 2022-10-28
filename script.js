@@ -1,23 +1,16 @@
-// #nav
+const navCheck = document.querySelector(".navbar");
+
 function navBurgerMenu() {
-  const navCheck = document.querySelector(".navbar") !== null;
+
   if (navCheck) {
+
     const offCanvas = document.querySelector("[data-toggle='offcanvas']");
     const collapse = document.querySelector(".navbar-collapse");
     const overlay = document.querySelector(".overlay");
     const navbar = document.querySelector(".navbar-nav");
     const submenus = navbar.querySelectorAll(".sub-menu");
 
-  const navCheck = document.querySelector(".navbar") !== null;
-  if (navCheck) {
-  
-    const offCanvas = document.querySelector("[data-toggle='offcanvas']");
-    const collapse = document.querySelector(".navbar-collapse");
-    const overlay = document.querySelector(".overlay");
-    const navbar = document.querySelector(".navbar-nav");
-    const submenus = navbar.querySelectorAll(".sub-menu");
-  
-    offCanvas.onclick = function() {
+    offCanvas.onclick = function () {
       collapse.classList.toggle("open");
       overlay.classList.toggle("overlayon");
       offCanvas.classList.toggle("burgeron");
@@ -28,19 +21,19 @@ function navBurgerMenu() {
         li.classList.remove("activeItem");
       }
     };
-  
+
     const nav = document.querySelector("nav");
     const navHeight = nav.offsetHeight;
     const transparencyOffset = 200;
     let prevScrollpos = document.pageYOffset;
-    document.onscroll = function() {
+    document.onscroll = function () {
       /* Add dynamic transparency to nav */
       if (nav.getAttribute("data-isTransparent")) {
         if (
           // document.body.scrollTop >= transparencyOffset || document.documentElement.scrollTop >= transparencyOffset
           document.scrollingElement.scrollTop >= transparencyOffset || document.scrollingElement.scrollTop >= transparencyOffset
         ) {
-          /*in some Chrome versions there is bug with 'document.body.scrollTop'*/
+          /in some Chrome versions there is bug with 'document.body.scrollTop'/
           nav.setAttribute("data-isTransparent", "false");
         } else {
           nav.setAttribute("data-isTransparent", "true");
@@ -48,13 +41,13 @@ function navBurgerMenu() {
       }
     }
   }
-  
+
   const links = document.querySelectorAll('.drop-down');
-  
+
   links.forEach(link => {
     const subMenu = link.querySelector('.sub-menu');
-   
-    link.addEventListener('click', function() {
+
+    link.addEventListener('click', function () {
       if (this.classList.contains('activeItem')) {
         this.classList.remove('activeItem');
         subMenu.classList.remove('open-sub');
@@ -69,13 +62,8 @@ function navBurgerMenu() {
       }
     });
   });
-  
-  }
-  
-  if (window.innerWidth < 992) { // avoid 'click event' on large screens
-    navBurgerMenu();
-  }
-  
-  window.addEventListener('resize', () => {
-    navBurgerMenu();
-  })
+}
+
+if (window.innerWidth < 992) { // avoid 'click event' on large screens
+  navBurgerMenu();
+}
